@@ -1,39 +1,20 @@
-Redmine Shared API
+Redmine Better Custom Fields API
 -------
 
-This is a plugin share some endpoints of API.
+This is a Redmine plugin that provides a better, more complete API for custom fields.
 
-### New endpoints for NON-admin users
+### New endpoint
 
-* [GET] /shared/custom_fields.xml | .json
-* [GET] /shared/users.xml | .json
-* [GET] /shared/settings.xml | .json
+* [GET] /better/custom_fields.xml | .json
 
-```
-<settings>
-    <text_formatting>textile</text_formatting>
-    <gravatar_enabled>false</gravatar_enabled>
-    <gravatar_default>wavatar</gravatar_default>
-    <version>Redmine 3.1.1.stable</version>
-    <environment></environment>
-</settings>
-```
+This will include the projects for which the issue custom field should be available. It is intended to be used with the Zendesk plugin [RedminePro](https://smallcubed.com/rmp).
 
-### New endpoints for NON authorized (public) users:
-
-* [GET] /public/settings.xml | .json
-
-```
-<settings>
-	<rest_api_enabled>true</rest_api_enabled>
-</settings>
-```
 
 How to use
 -------
 ```
   $ cd /path/to/redmine/plugins
-  $ git clone git://github.com/ANovitsky/redmine_shared_api.git
+  $ git clone https://github.com/smallcubed/redmine_better_custom_fields.git
 ```
 Then restart redmine.
 
@@ -45,4 +26,4 @@ License
 This plugin is released under the GPL v2 license. See
 LICENSE for more information.
 
-Powered by [www.ahausoftware.com](http://www.ahausoftware.com/redmine-outlook) 
+Powered by [SmallCubed](http://smallcubed.com) 
