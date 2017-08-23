@@ -1,4 +1,4 @@
-Redmine::Plugin.register :better_redmine_custom_fields_api do
+Redmine::Plugin.register :redmine_better_custom_fields do
   name 'Redmine Better Custom Field API'
   author 'SmallCubed Inc'
   description 'This is a plugin share API for Redmine Outlook Add-In, QuickBooks, etc..' 
