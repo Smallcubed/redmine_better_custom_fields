@@ -1,4 +1,4 @@
-class BetterCustomFieldsApiController < ApplicationController
+class RedmineBetterCustomFieldsController < ApplicationController
 
   before_filter :require_login
   accept_api_auth :index
