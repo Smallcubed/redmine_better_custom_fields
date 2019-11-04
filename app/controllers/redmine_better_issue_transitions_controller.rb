@@ -13,7 +13,7 @@ class RedmineBetterIssueTransitionsController < ApplicationController
     	  @issue = nil
     	end
         @allowed_transitions = []
-        if @issue && roles
+        unless @issue.nil?
           workflow = WorkflowTransition.where(:tracker_id => @issue.tracker, :role_id => roles)
           workflow.each do |transition|
           	if transition.old_status_id == @issue.status_id
