@@ -1,0 +1,5 @@
+api.allowed_transitions do
+  @allowed_statuses.each do |status|
+    api.id status.id
+  end
+end
