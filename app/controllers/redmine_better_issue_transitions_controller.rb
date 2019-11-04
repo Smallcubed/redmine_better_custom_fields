@@ -11,7 +11,7 @@ class RedmineBetterIssueTransitionsController < ApplicationController
         @issue = Issue.find(params[:issue_id])
         @workflow = []
         if roles
-          @workflow = WorkflowTransition.where(:tracker_id => @issue.tracker.to_a, :role_id => roles)
+          @workflow = WorkflowTransition.where(:tracker_id => @issue.tracker, :role_id => roles)
         end
       }
     end
