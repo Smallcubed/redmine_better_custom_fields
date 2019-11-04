@@ -6,11 +6,12 @@ class RedmineBetterIssueTransitionsController < ApplicationController
   def index
     respond_to do |format|      
       format.api {
-      	roles = User.current.roles
       	begin
           @issue = Issue.find(params[:issue_id])
+          roles = roles_for_project(@issue.project)
     	rescue
     	  @issue = nil
+    	  roles = nil
     	end
         @allowed_transitions = []
         if @issue && roles
