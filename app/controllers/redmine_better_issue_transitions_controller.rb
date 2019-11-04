@@ -9,9 +9,14 @@ class RedmineBetterIssueTransitionsController < ApplicationController
       format.api {
       	@roles = User.current.roles
         @issue = Issue.find(params[:issue_id])
-        @workflow = []
+        @allowed_transitions = []
         if @roles
           @workflow = WorkflowTransition.where(:tracker_id => @issue.tracker, :role_id => @roles)
+          @workflow.each do |transition|
+          	if transition.old_status_id == @issue.status_id
+          	  @allowed_transitions[:to_status] = transition.new_status_id
+          	end
+          end
         end
       }
     end

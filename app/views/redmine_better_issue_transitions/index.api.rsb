@@ -1,8 +1,5 @@
 api.array :allowed_transitions do
-  @roles.each do |role|
-    api.role role.id
-  end
-  @workflow.each do |wf|
-    api.transition :old_status_id => wf.old_status_id, :new_status_id => wf.new_status_id
+  @allowed_transition do |trans|
+    api.transition trans.new_status_id
   end
 end
