@@ -1,4 +1,4 @@
-if @issue.present?
+unless @issue.nil?
   api.issue do
     api.id @issue.id
     api.array :allowed_status_transitions do
