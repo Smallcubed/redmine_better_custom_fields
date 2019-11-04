@@ -7,8 +7,12 @@ class RedmineBetterIssueTransitionsController < ApplicationController
   def index
     respond_to do |format|      
       format.api {
+      	roles = User.current.roles.to_a
         @issue = Issue.find(params[:issue_id])
-        @allowed_statuses = @issue.new_statuses_allowed_to(User.current, true)
+        find_tracker
+        if roles && @trackers
+          @workflow = WorkflowTransition.where(:tracker_id => @tracker, :role_id => @roles)
+        end
       }
     end
   end
@@ -17,6 +21,11 @@ class RedmineBetterIssueTransitionsController < ApplicationController
     @issue = Issue.find(params[:issue_id])
   rescue ActiveRecord::RecordNotFound
     render_404
+  end
+
+  def find_tracker
+    @tracker = @issue.tracker
+    @tracker = nil if @tracker.blank?
   end
 
 end
