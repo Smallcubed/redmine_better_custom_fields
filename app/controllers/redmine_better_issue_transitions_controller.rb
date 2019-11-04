@@ -7,10 +7,13 @@ class RedmineBetterIssueTransitionsController < ApplicationController
     respond_to do |format|      
       format.api {
       	roles = User.current.roles
+      	@found = 'one'
       	begin
           @issue = Issue.find?(params[:issue_id])
+      	  @found = 'two'
     	rescue
     	  @issue = nil
+      	  @found = 'three'
     	end
         @allowed_transitions = []
         unless @issue.nil?
