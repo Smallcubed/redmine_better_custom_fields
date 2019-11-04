@@ -7,11 +7,11 @@ class RedmineBetterIssueTransitionsController < ApplicationController
   def index
     respond_to do |format|      
       format.api {
-      	roles = User.current.roles.to_a
+      	@roles = User.current.roles.to_a
         @issue = Issue.find(params[:issue_id])
         @workflow = []
         if roles
-          @workflow = WorkflowTransition.where(:tracker_id => @issue.tracker, :role_id => roles)
+          @workflow = WorkflowTransition.where(:tracker_id => @issue.tracker, :role_id => @roles)
         end
       }
     end
