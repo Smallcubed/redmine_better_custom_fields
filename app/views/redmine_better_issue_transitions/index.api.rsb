@@ -1,8 +1,10 @@
-api.issue do
-  api.id @issue.id
-  api.array :allowed_status_transitions do
-    @allowed_transitions.each do |trans|
-      api.transition trans
+if @issue.present?
+  api.issue do
+    api.id @issue.id
+    api.array :allowed_status_transitions do
+      @allowed_transitions.each do |trans|
+        api.transition trans
+      end
     end
   end
 end
