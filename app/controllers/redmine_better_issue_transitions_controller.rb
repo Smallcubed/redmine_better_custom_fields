@@ -9,7 +9,7 @@ class RedmineBetterIssueTransitionsController < ApplicationController
       	roles = User.current.roles
       	@found = 'one'
       	begin
-          @issue = Issue.find?(params[:issue_id])
+          @issue = Issue.find(params[:issue_id])
       	  @found = 'two'
     	rescue
     	  @issue = nil
