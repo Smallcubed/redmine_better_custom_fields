@@ -8,7 +8,7 @@ class RedmineBetterIssueTransitionsController < ApplicationController
       format.api {
       	begin
           @issue = Issue.find(params[:issue_id])
-          roles = roles_for_project(@issue.project)
+          roles = User.current.roles_for_project(@issue.project)
     	rescue
     	  @issue = nil
     	  roles = nil
