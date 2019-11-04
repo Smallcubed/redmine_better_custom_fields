@@ -1,5 +1,5 @@
 api.array :allowed_status_transitions do
-  @allowed_transition do |trans|
+  @allowed_transitions do |trans|
     api.transition trans
   end
 end
