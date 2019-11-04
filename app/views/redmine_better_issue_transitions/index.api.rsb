@@ -1,6 +1,6 @@
-api.array :allowed_status_transitions do
-  api.issue do
-    api.id @issue.id
+api.issue do
+  api.id @issue.id
+  api.array :allowed_status_transitions do
     @allowed_transitions.each do |trans|
       api.transition trans
     end
