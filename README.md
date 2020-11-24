@@ -6,6 +6,7 @@ This is a Redmine plugin that provides a better, more complete API for custom fi
 ### New endpoint
 
 * [GET] /better/custom_fields.xml | .json
+* [GET] /better/issue_transitions.xml | .json
 
 This will include the projects for which the issue custom field should be available. It is intended to be used with the Zendesk plugin [RedminePro](https://smallcubed.com/rmp).
 
