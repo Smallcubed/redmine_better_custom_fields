@@ -17,9 +17,10 @@ How to use
   $ cd /path/to/redmine/plugins
   $ git clone https://github.com/smallcubed/redmine_better_custom_fields.git
 ```
-Then restart redmine.
 
-Compatible with:	Redmine 4.0.x, 3.2.x, 3.1.x, 3.0.x, 2.6.x, 2.5.x
+Then restart redmine or the webserver to reload the plugins (no need to run any rails scripts for updating the database).
+
+Compatible with:	Redmine 5.0.x, 4.2.x, 4.1.x, 4.0.x, 3.2.x, 3.1.x, 3.0.x, 2.6.x, 2.5.x
 
 License
 -------
